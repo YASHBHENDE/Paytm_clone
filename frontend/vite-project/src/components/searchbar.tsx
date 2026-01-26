@@ -39,11 +39,6 @@ export default function SearchBar(){
     </div>
 }
 
-// "username": "yash",
-//             "firstname": "yash",
-//             "lastname": "yash",
-//             "_id": "685a61a2c45e66b51160a673"
-
 
 function DisplayUser({username,firstname,lastname,_id}:user){
     const navigate = useNavigate()

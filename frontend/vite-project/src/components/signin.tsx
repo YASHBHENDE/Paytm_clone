@@ -8,14 +8,16 @@ export default function Signin(){
 
    
     const navigate = useNavigate()
+
+    const inputFieldStyle = "border border-black rounded-sm"
     return <>
     <center>
-        <div className="flex flex-col h-60 w-100 border border-black rounded-xl p-4 space-y-4 m-10">
+        <div className="flex flex-col h-60 w-100 border border-2 border-black rounded-xl p-4 space-y-4 m-10">
 
             Signin!
-            <input placeholder="username"  onChange={(e)=>{setusername(e.target.value)}} className="border border-black rounded-sm"/>
+            <input placeholder=" username"  onChange={(e)=>{setusername(e.target.value)}} className={inputFieldStyle}/>
            
-            <input placeholder="password" onChange={(e)=>{setpassword(e.target.value)}} className="border border-black rounded-sm"/>
+            <input placeholder=" password" onChange={(e)=>{setpassword(e.target.value)}} className={inputFieldStyle}/>
             <button onClick={async()=>{
                 const response= await axios.post("http://localhost:3001/api/v1/user/signin",{
                     username,
@@ -25,7 +27,7 @@ export default function Signin(){
                 localStorage.setItem("token",response.data.token)
                 navigate('/dashboard')
             }} className="bg-black text-white rounded-xl">Signin</button>
-            dont have account? <a onClick={()=>{navigate('/signup')}}>Sign up</a>
+            dont have account? <a onClick={()=>{navigate('/signup')}} className="bg-gray-300 rounded-2xl">Sign up</a>
         </div>
         </center>
     </>

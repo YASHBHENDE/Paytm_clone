@@ -10,15 +10,17 @@ export default function Signup(){
 
    
     const navigate = useNavigate()
+
+    const inputFieldStyle = "border border-black rounded-sm"
     return <>
     <center>
-        <div className="flex flex-col h-100 w-100 border border-black rounded-xl p-4 space-y-4 m-10">
+        <div className="flex flex-col h-85 w-100 border border-2 border-black rounded-xl p-4 space-y-3 m-10">
 
             Signup!
-            <input placeholder="username"  onChange={(e)=>{setusername(e.target.value)}} className="border border-black rounded-sm"/>
-            <input placeholder="firstname" onChange={(e)=>{setfirstname(e.target.value)}}  className="border border-black rounded-sm"/>
-            <input placeholder="lastname" onChange={(e)=>{setlastname(e.target.value)}} className="border border-black rounded-sm"/>
-            <input placeholder="password" onChange={(e)=>{setpassword(e.target.value)}} className="border border-black rounded-sm"/>
+            <input placeholder=" username"  onChange={(e)=>{setusername(e.target.value)}} className={inputFieldStyle}/>
+            <input placeholder=" firstname" onChange={(e)=>{setfirstname(e.target.value)}}  className={inputFieldStyle}/>
+            <input placeholder=" lastname" onChange={(e)=>{setlastname(e.target.value)}} className={inputFieldStyle}/>
+            <input placeholder=" password" onChange={(e)=>{setpassword(e.target.value)}} className={inputFieldStyle}/>
             <button onClick={async()=>{
                 const response= await axios.post("http://localhost:3001/api/v1/user/signup",{
                     username,
@@ -29,8 +31,11 @@ export default function Signup(){
 
                 localStorage.setItem("token",response.data.token)
                 navigate('/dashboard')
-            }} className="bg-black text-white rounded-xl">Signup</button>
-            already have account? <a onClick={()=>{navigate('/signin')}}>log in</a>
+            }} className="bg-black text-white rounded-xl ">Signup</button>
+            already have account? <button 
+                onClick={()=>{navigate('/signin')}} 
+                className="bg-gray-300 rounded-2xl"
+            >log in</button>
         </div>
         </center>
     </>
