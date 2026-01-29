@@ -1,54 +1,75 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function PhonePayLandingPage() {
+
+  const navigate = useNavigate()
   return (
-    <div className="bg-gray-100 text-gray-800 font-sans">
-      {/* Header */}
-      <header className="bg-white shadow-md px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-indigo-600">PhonePay</h1>
-        <nav className="space-x-6">
-          <a href="#features" className="hover:text-indigo-600">Features</a>
-          <a href="#testimonials" className="hover:text-indigo-600">Testimonials</a>
-          <a href="#contact" className="hover:text-indigo-600">Contact</a>
-        </nav>
-      </header>
+    <>
+      <div className="border border-1 border-black p-4 flex justify-between">
+        <h3>Paytm</h3>
 
-      {/* Hero Section */}
-      <section className="text-center py-20 px-4 bg-gradient-to-br from-indigo-500 to-purple-600 text-white">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Your Ultimate Payment Partner</h2>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">Send, receive and manage money effortlessly with PhonePay.</p>
-        <button className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition">Get Started</button>
-      </section>
+        <div>
+          <button className="bg-gray-300 rounded-2xl" onClick={()=>{navigate('/signup')}} >
+            Sign up now!
+          </button>
+        </div>
+      </div>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 px-4 max-w-6xl mx-auto">
-        <h3 className="text-3xl font-bold text-center mb-12">Why PhonePay?</h3>
-        <div className="grid md:grid-cols-3 gap-8 text-center">
-          <div className="bg-white rounded-xl p-6 shadow">
-            <h4 className="text-xl font-semibold mb-2">Secure Payments</h4>
-            <p>Military-grade encryption ensures your transactions are always safe.</p>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow">
-            <h4 className="text-xl font-semibold mb-2">Instant Transfers</h4>
-            <p>Send and receive money instantly anytime, anywhere.</p>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow">
-            <h4 className="text-xl font-semibold mb-2">Track Your Expenses</h4>
-            <p>Detailed insights to help you manage and grow your finances.</p>
+
+
+       <div className="p-10 flex flex-col items-center text-center gap-4 m-10">
+          <h1 className="text-4xl font-bold">
+            Fast, Secure & Simple Payments
+          </h1>
+
+          <p className="text-gray-600 max-w-xl">
+            Pay bills, recharge, transfer money and manage your finances —
+            all in one place.
+          </p>
+
+          <div className="flex gap-4 mt-4">
+            <button 
+              className="bg-blue-600 text-white px-6 py-2 rounded-xl"
+              onClick={() => navigate("/signup")}
+            >
+              Get Started
+            </button>
+
+            <button 
+              className="border border-gray-400 px-6 py-2 rounded-xl"
+              onClick={() => navigate("/signin")}
+            >
+              Login
+            </button>
           </div>
         </div>
-      </section>
 
-      {/* Testimonials Placeholder */}
-      <section id="testimonials" className="bg-gray-200 py-16 text-center">
-        <h3 className="text-3xl font-bold mb-8">What our users say</h3>
-        <p className="text-gray-600 italic">Coming soon...</p>
-      </section>
+       
+      <div className="p-10 text-center m-10 mb-5">
+        <h2 className="text-2xl font-bold">
+          Ready to experience smarter payments?
+        </h2>
 
-      {/* Footer */}
-      <footer id="contact" className="bg-white text-center py-6 border-t">
-        <p>&copy; {new Date().getFullYear()} PhonePay. All rights reserved.</p>
+        <button 
+          className="mt-4 bg-blue-600 text-white px-8 py-3 rounded-xl"
+          onClick={() => navigate("/signup")}
+        >
+          Create Free Account
+        </button>
+      </div>
+
+
+
+      <hr />
+      <footer className="p-4 flex justify-between">
+        <div>
+          © 2025 Paytm
+        </div>
+          
+        
+        follow us on ⓕ 𝕏 ▶ 🇮🇳
       </footer>
-    </div>
+    </>
   );
 }
