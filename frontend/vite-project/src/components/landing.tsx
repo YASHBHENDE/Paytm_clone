@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Testimonials from "./testimonial";
 
 export default function PhonePayLandingPage() {
 
@@ -10,7 +11,7 @@ export default function PhonePayLandingPage() {
         <h3>Paytm</h3>
 
         <div>
-          <button className="bg-gray-300 rounded-2xl" onClick={()=>{navigate('/signup')}} >
+          <button className="bg-blue-600 rounded-xl p-2 text-white" onClick={()=>{navigate('/signup')}} >
             Sign up now!
           </button>
         </div>
@@ -45,7 +46,15 @@ export default function PhonePayLandingPage() {
           </div>
         </div>
 
-       
+      {/* Testimonials */}
+
+        <center> 
+        <Testimonials/>
+
+        </center>
+        
+
+      {/* ///// */}
       <div className="p-10 text-center m-10 mb-5">
         <h2 className="text-2xl font-bold">
           Ready to experience smarter payments?
