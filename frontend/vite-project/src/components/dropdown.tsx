@@ -30,7 +30,7 @@ export function UserCommand({ payeeNames }: UserCommandProps) {
               key={payee._id}
               onSelect={() =>
                 navigate(
-                  `/send?toUser=${payee._id}&FirstName=${payee.firstname}&LastName=${payee.lastname}`
+                  `/send?toUser=${payee._id}&Username=${payee.username}`
                 )
               }
             >
