@@ -151,5 +151,21 @@ router.get("/bulk", async (req, res) => {
     }
 });
 
+router.get("/me",UserMiddleware,async(req:AuthRequest,res)=>{
+    const userId = req.userId
+    console.log(userId)
+    const AccountDetail = await Account.findOne({userId:userId})
+    const UserDetail = await User.findOne({_id:userId})
 
+    console.log(AccountDetail)
+    res.json({
+        "balance":AccountDetail?.balance,
+        "detail":{
+            firstname:UserDetail?.firstname,
+            lastname:UserDetail?.lastname,
+            username:UserDetail?.username,
+            
+        }
+    })
+})
 export default router
